@@ -6,13 +6,13 @@ June 2019
 
 email @ tengyue.zheng@addenbrook.nhs.uk
 
-##Task:
+## Task:
 Use python3 to write an object-oriented program for booking a meeting room, including class definitions, objects, variables and function definitions.
 
-##Requirements:
+## Requirements:
 The program should display the times available for booking when a date is given, and allows the user to select a time that is suitable for them. The user should also specify the number of people attending the meeting, and option to change the meeting times to an earlier or later time. 
 
-##Solution:
+## Solution:
 
 To complete this task, I have implemented ab object oriented programming approach, where each the components of the booking system is described as an object in a class.
 
