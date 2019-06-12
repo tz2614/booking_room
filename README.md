@@ -18,7 +18,6 @@ To complete this task, I have implemented ab object oriented programming approac
 
 Main Classes:
 1.	User
-2.	Administrator
 3.	Room
 4.	Booking
 
