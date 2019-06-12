@@ -35,30 +35,40 @@ class User(object):
 	Attributes:
 		username
 		password
-		name:
+		name
+		status (e.g. admin or user)
 	Methods:
 		register
 		login
 		new_username
 		new_password
 		new_name
+		displayinfo
+		remove_user
+		edit_user
+		add_user
 	"""
 
-	def __init__(self, username, password, name):
+	def __init__(self, username, password, name, status):
 
 		"""Return a new User object."""
 
 		self.username = username
 		self.password = password
 		self.name = name
+		self.status = status
 		user_info[self.username] = {}
 		user_info[self.username]["name"] = self.name
 		user_info[self.username]["password"] = self.password
-		user_count += 1
+		if self.status = "admin":
+			user_count += 1
+		if self.status = "admin"
+			admin_count += 1
 
 	def login(self):
 
 		"""A user must login before booking a room"""
+
 		print ("Please enter your login detail.")
 		new_username = input("enter your username: ")
 		new_password = input("enter your password: ")
@@ -107,8 +117,6 @@ class User(object):
 			user_info[self.username]["password"] = new_password
 			print ("password changed")
 
-
-
 	def new_name(self):
 
 		"""A user can change their name after they login"""
@@ -128,36 +136,6 @@ class User(object):
 		"""A user can view their user info after login"""
 
 		pp.pprint (user_info[username])
-
-class Admin(User):
-
-	"""
-	An administrator to manage the users, rooms, and bookings
-
-	Attributes:
-		username
-		password
-		name:
-	Methods:
-		register
-		login
-		new_username
-		new_password
-		new_name
-		remove_user
-		edit_user
-		add_user
-		remove_booking
-		edit_booking
-		add_booking
-	"""
-
-	def __init__(self, username, password, name, remove_user, edit_user, add_user, remove_booking, edit_booking, add_booking):
-		User.__init__(self, username, password, name)
-		self.remove_user = remove_user
-		self.edit_user = edit_user
-		self.add_user = add_user
-		admin_count += 1
 
 class Room(object):
 
@@ -253,6 +231,7 @@ class Booking(User, Admin, Room):
 		location
 		date
 		time
+		duration
 
 	Methods:
 		set_date
@@ -342,17 +321,6 @@ class Booking(User, Admin, Room):
 	def remove_booking()
 	def edit_booking()
 	"""
-
-# function taken from https://gist.github.com/garrettdreyfus/8153571
-def yes_or_no(question):
-
-	reply = str(input(question+' (y/n): ')).lower().strip()
-	if reply[:1] = 'y':
-		return True
-	else:
-		reply[:1] = 'n':
-		return False
-
 
 if __name__ == "__main__":
 
